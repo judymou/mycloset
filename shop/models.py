@@ -9,4 +9,7 @@ class Item(models.Model):
   title = models.CharField(max_length=500)
   description = models.CharField(max_length=1500)
 
+  def __str__(self):
+      return self.title
+
 admin.site.register(Item)

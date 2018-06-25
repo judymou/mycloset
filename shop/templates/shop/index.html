@@ -1,9 +1,26 @@
-{% for item in item_list %}
-  <div>
-    <h2>{{item.title}}</h2>
-    <p>
-      {{item.description}}
-    </p>
-    <img src="{{item.image_url}}">
-  </div>
-{% endfor %}
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block scripts %}
+<script src="{% static "js/main.js" %}"></script>
+{% endblock %}
+
+{% block content %}
+<h1>The Shop</h1>
+<div class="intro">
+  <p>
+    Welcome to the shop. You can view all of Lucia's clothes here.
+  </p>
+</div>
+<div>
+  {% for item in item_list %}
+    <div class="item-container col-sm-4">
+      <h2>{{item.title}}</h2>
+      <p>
+        {{item.description}}
+      </p>
+      <img src="{{item.image_url}}">
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}
